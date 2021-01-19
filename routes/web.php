@@ -17,7 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', 'TelegramController@test');
+Route::redirect('test', 'ping');
+
+Route::get('/ping', 'TelegramController@ping');
 Route::get('/set-webhook', 'TelegramController@setWebhook');
 Route::any('/remove-webhook', 'TelegramController@removeWebhook');
 Route::any('/webhook', 'TelegramController@webhook');
