@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('test', function () {
-   dd(2);
-});
+Route::get('/test', 'TelegramController@test');
+Route::get('/set-webhook', 'TelegramController@setWebhook');
+Route::any('/remove-webhook', 'TelegramController@removeWebhook');
+Route::any('/webhook', 'TelegramController@webhook');
